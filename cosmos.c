@@ -21,9 +21,6 @@ int main(int argc, char *argv[]){
             strncpy(input, argv[2], sizeof(input) - 1);
             input[sizeof(input) - 1] = '\0';
 
-            printf("install> ");
-            scanf("%49s", input);
-
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar zxvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "cd %s", input);
