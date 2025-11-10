@@ -1,0 +1,23 @@
+#!/bin/bash
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        clean)
+            read -p "autogen.sh: clean: Are you sure? [y/N]: " i
+            if [[ "$i" == "Y" || "$i" == "y" ]]; then
+                cd build 2>/dev/null
+                rm -rf *
+            elif [[ "$i" == "N" || "$i" == "n" || "$i" == "" ]]; then
+                exit 0
+            else
+                echo "Please enter Y or N"
+                exit 1
+            fi
+        ;;
+        build)
+            cd build 2>/dev/null
+            cmake -G Ninja ..
+            ninja -C .
+        ;;
+    esac
+    shift
+done
