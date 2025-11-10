@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
             char cmd1[1024];
 
             printf("install> ");
-            scanf("%49s", input);  // read user input safely
+            scanf("%49s", input);
 
             snprintf(cmd1, sizeof(cmd1), "wget https://github.com/Mortem-Metallum/cosmos-repo/%s.tar.gz", input);
             printf("I >>> Executing command: wget %s\n", input);
