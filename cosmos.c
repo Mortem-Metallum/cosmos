@@ -11,8 +11,10 @@ int main(int argc, char *argv[]){
         if(strcmp(argv[i], "install") == 0){
             char input[50];
             char cmd1[1024];
-            char cmd2[1024];
-            char cmd3[1024];
+            char cmd2[100];
+            char cmd3[7];
+            char cmd4[350];
+            char cmd5[350];
 
             strncpy(input, argv[2], sizeof(input) - 1);
             input[sizeof(input) - 1] = '\0';
@@ -20,12 +22,15 @@ int main(int argc, char *argv[]){
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "cd %s", input);
+            snprintf(cmd4, sizeof(cmd4), "make -j$(nproc)")
+            
             printf(":: %s\n", cmd1);
 
             int e = system(cmd1);
             if(e != 0){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
+                return 1;
             }
 
             printf(":: %s\n", cmd2);
@@ -33,13 +38,23 @@ int main(int argc, char *argv[]){
             if(e2 != 0){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
+                return 1;
             }
-            
-            int e3 = system(cmd3);
+
             printf(":: %s\n", cmd3);
+            int e3 = system(cmd3);
             if(e3 != 0){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
+                return 1;
+            }
+
+            printf(":: %s\n", cmd4);
+            int e4 = system(cmd4);
+            if(e4 != 0){
+                printf("E >>> Failed!\n");
+                printf("The operation could not complete due to previous errors\n");
+                return 1;
             }
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
