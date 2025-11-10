@@ -16,8 +16,7 @@ int main(int argc, char *argv[]){
             if(e != 0){
                 printf("E >>> Failed! %d", e);
                 printf("The operation could not complete due to previous errors");
-            }    
-        }
+            } 
         } else {
             printf("E >>> Missing operand");
             printf("I >>> Try cosmos --help for more information");
