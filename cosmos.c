@@ -1,3 +1,6 @@
+// The Cosmos Package Manager
+// Copyright 2025, John Doe. This software is under the BSD 3-clause license. Read LICENSE for more information
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +15,7 @@ int main(int argc, char *argv[]){
             printf("install> ");
             scanf("%49s", input);
 
-            snprintf(cmd1, sizeof(cmd1), "wget https://github.com/Mortem-Metallum/cosmos-repo/%s.tar.gz", input);
+            snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             printf("I >>> Executing command: wget %s\n", input);
 
             int e = system(cmd1);
