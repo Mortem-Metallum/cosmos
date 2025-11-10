@@ -6,11 +6,13 @@ int main(int argc, char *argv[]){
     int i = 1;
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
-            char input[50] = "";
+            char input[50];
+            char cmd1[1024];
+            snprintf(cmd, sizeof(cmd), "wget https://github.com/Mortem-Metallum/cosmos-repo/%s.tar.gz", input);
             printf("install> ");
             scanf("%s", &input);
             printf("I >>> Executing command: wget %s", input);
-            int e = system("wget http://github.com/Mortem-Metallum/cosmos-repo/%s.tar.gz", input);
+            int e = system(cmd1);
             if(e != 0){
                 printf("E >>> Failed! %d", e);
                 printf("The operation could not complete due to previous errors");
