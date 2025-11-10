@@ -8,10 +8,6 @@
 int main(int argc, char *argv[]){
     int i = 1;
     while(i < argc){
-        if(argc < 3){
-            printf("E >>> Missing operand");
-            printf("I >>> Try cosmos --help for more information");
-        }
         if(strcmp(argv[i], "install") == 0){
             char input[50];
             char cmd1[1024];
