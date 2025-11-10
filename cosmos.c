@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
             scanf("%s", &input);
             try{
                 printf("I >>> Executing command: wget %s", input);
-                system("wget %s", input);
+                system("wget http://github.com/Mortem-Metallum/cosmos-repo/%s.tar.gz", input);
             } catch (e) {
                 printf("E >>> Failed! %d", e);
                 printf("The operation could not complete due to previous errors");
