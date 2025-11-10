@@ -45,9 +45,12 @@ int main(int argc, char *argv[]){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
             }
+        } else if(strcmp(argv[i], "--help") == 0){
+            printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
+            printf("Operands: \n");
+            printf("install: Installs specified package\n");
+            return 0;
         } else {
-            printf("E >>> Unknown argument %s\n", argv[1]);
-            printf("I >>> Try cosmos --help for more information\n");
             return 1;
         }
 
