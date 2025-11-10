@@ -8,9 +8,18 @@
 int main(int argc, char *argv[]){
     int i = 1;
     while(i < argc){
+        if(argc < 3){
+            printf("E >>> Missing operand");
+            printf("I >>> Try cosmos --help for more information");
+        }
         if(strcmp(argv[i], "install") == 0){
             char input[50];
             char cmd1[1024];
+            char cmd2[1024];
+            char cmd3[1024];
+
+            strncpy(input, argv[2], sizeof(input) - 1);
+            input[sizeof(input) - 1] = '\0';
 
             printf("install> ");
             scanf("%49s", input);
@@ -40,7 +49,7 @@ int main(int argc, char *argv[]){
                 printf("The operation could not complete due to previous errors\n");
             }
         } else {
-            printf("E >>> Missing operand\n");
+            printf("E >>> Unknown argument %s\n", argv[1]);
             printf("I >>> Try cosmos --help for more information\n");
             return 1;
         }
