@@ -22,27 +22,27 @@ int main(int argc, char *argv[]){
             input[sizeof(input) - 1] = '\0';
 
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
-            snprintf(cmd2, sizeof(cmd2), "tar zxvf %s.tar.gz", input);
+            snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "cd %s", input);
             printf(":: %s\n", cmd1);
 
             int e = system(cmd1);
             if(e != 0){
-                printf("E >>> Failed!");
+                printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
             }
 
             printf(":: %s\n", cmd2);
             int e2 = system(cmd2);
             if(e2 != 0){
-                printf("E >>> Failed!");
+                printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
             }
             
             int e3 = system(cmd3);
             printf(":: %s\n", cmd3);
             if(e3 != 0){
-                printf("E >>> Failed!");
+                printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
             }
         } else {
