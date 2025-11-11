@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
                 printf("COMET: Failed!");
                 return 1;
             }
-            printf("I >>> Done\n!");
+            printf("I >>> Done!\n");
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
             printf("Operands: \n\n");
