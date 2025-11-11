@@ -8,7 +8,9 @@ chmod +x autogen.sh
 
 ./autogen.sh build
 
-This will compile in the build folder
+sudo ./autogen.sh install
+
+This will compile and install in the build folder
 
 
 Usage: cosmos [ OPERAND ] [ PACKAGE ]
