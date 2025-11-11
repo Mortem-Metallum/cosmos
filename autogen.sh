@@ -9,7 +9,7 @@ while [[ $# -gt 0 ]]; do
             elif [[ "$i" == "N" || "$i" == "n" || "$i" == "" ]]; then
                 exit 0
             else
-                echo "Please enter Y or N"
+                echo "autogen.sh: Please enter Y or N"
                 exit 1
             fi
         ;;
@@ -17,6 +17,10 @@ while [[ $# -gt 0 ]]; do
             cd build 2>/dev/null
             cmake -G Ninja ..
             ninja -C .
+        ;;
+        *)
+            echo "autogen.sh: Please specify one arg: clean or build"
+            exit 1
         ;;
     esac
     shift
