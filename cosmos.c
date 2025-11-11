@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
             snprintf(cmd3, sizeof(cmd3), "make -C %s -j$(nproc)", input);
             snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s /usr/bin", input, input);
 
-            printf("I >>>     Information, W >>>     Warning, ::     Command, E >>>     Error");
+            printf("I >>>     Information, W >>>     Warning, ::     Command, E >>>     Error\n");
             printf(":: %s\n", cmd1);
 
             int e = system(cmd1);
