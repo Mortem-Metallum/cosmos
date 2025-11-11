@@ -14,14 +14,15 @@ while [[ $# -gt 0 ]]; do
             fi
         ;;
         build)
-            cd build 2>/dev/null
+            cd build
             cmake -G Ninja ..
             ninja -C .
         ;;
         install)
+            echo "autogen.sh: Need root access, enter the root password to allow this"
             su
-            cp ./comet /usr/bin
-            cp ./cosmos /usr/bin
+            cp ./build/comet /usr/bin || cp ./comet /usr/bin
+            cp ./build/cosmos /usr/bin || cp ./cosmos /usr/bin
         ;;
         *)
             echo "autogen.sh: Please specify one arg: clean, install, or build"
