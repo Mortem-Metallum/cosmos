@@ -19,8 +19,10 @@ while [[ $# -gt 0 ]]; do
             ninja -C .
         ;;
         install)
-            echo "autogen.sh: Need root access, enter the root password to allow this"
-            su
+            if [[ "$USER" != "root" ]]; then
+                echo "autogen.sh: Need root access, enter the root password to allow this"
+                su
+            fi
             cp ./build/comet /usr/bin || cp ./comet /usr/bin
             cp ./build/cosmos /usr/bin || cp ./cosmos /usr/bin
         ;;
