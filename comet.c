@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
       builddir[sizeof(builddir) - 1] = '\0';
 
       snprintf(compilecmd, sizeof(compilecmd), "make -C %s -j$(nproc)", builddir);
-      snprintf(mrproper, sizeof(mrproper), "rm -rf %s", mrproper);
+      snprintf(mrproper, sizeof(mrproper), "rm -rf %s", builddir);
       printf("COMET: Running compile command\n");
       printf(":: %s\n", compilecmd);
       int r1 = system(compilecmd);
