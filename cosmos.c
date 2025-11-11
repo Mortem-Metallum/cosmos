@@ -21,8 +21,7 @@ int main(int argc, char *argv[]){
 
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
-            snprintf(cmd3, sizeof(cmd3), "cd %s", input);
-            snprintf(cmd4, sizeof(cmd4), "make -j$(nproc)");
+            snprintf(cmd3, sizeof(cmd3), "make -C %s -j$(nproc)", input);
             
             printf(":: %s\n", cmd1);
 
@@ -44,14 +43,6 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", cmd3);
             int e3 = system(cmd3);
             if(e3 != 0){
-                printf("E >>> Failed!\n");
-                printf("The operation could not complete due to previous errors\n");
-                return 1;
-            }
-
-            printf(":: %s\n", cmd4);
-            int e4 = system(cmd4);
-            if(e4 != 0){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
