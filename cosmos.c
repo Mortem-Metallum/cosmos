@@ -14,7 +14,6 @@ int main(int argc, char *argv[]){
             char cmd2[350];
             char cmd3[350];
             char cmd4[350];
-            char cmd5[350];
 
             strncpy(input, argv[2], sizeof(input) - 1);
             input[sizeof(input) - 1] = '\0';
@@ -22,6 +21,7 @@ int main(int argc, char *argv[]){
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "make -C %s -j$(nproc)", input);
+            snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s /usr/bin", input, input);
             
             printf(":: %s\n", cmd1);
 
@@ -47,6 +47,15 @@ int main(int argc, char *argv[]){
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             }
+
+            printf(":: %s\n", cmd4);
+            int e4 = system(cmd4);
+            if(e4 != 0){
+                printf("E >>> Failed!\n");
+                printf("The operation could not complete due to previous errors\n");
+                return 1;
+            }
+            printf("I >>> Done!");
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
             printf("Operands: \n");
