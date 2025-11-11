@@ -62,7 +62,7 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", mrproper);
             int e5 = system(mrproper);
             if(e5 != 0){
-                printf("COMET: Failed!");
+                printf("E >>> Failed!");
                 return 1;
             }
             printf("I >>> Done!\n");
