@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
     int i = 1;
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
-            char input[50];
+            char input[250];
             char cmd1[1024];
             char cmd2[350];
             char cmd3[350];
