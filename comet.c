@@ -8,8 +8,8 @@ int main(int argc, char *argv[]){
     if(strcmp(argv[i], "-d") == 0){
       char builddir[100];
       char compilecmd[350];
-      char mrproper[350];
 
+      
       strncpy(builddir, argv[2], sizeof(builddir) - 1);
       builddir[sizeof(builddir) - 1] = '\0';
 
