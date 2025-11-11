@@ -22,14 +22,6 @@ int main(int argc, char *argv[]){
         printf("COMET: Failed!");
         return 1;
       }
-
-      printf("COMET: Cleaning up...\n");
-      printf(":: %s\n", mrproper);
-      int r2 = system(mrproper);
-      if(r2 != 0){
-        printf("COMET: Failed!");
-        return 1;
-      }
       return 0;
     }
   }
