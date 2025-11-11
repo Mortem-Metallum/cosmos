@@ -4,11 +4,11 @@ git clone https://github.com/Mortem-Metallum/cosmos.git
 
 cd cosmos
 
-chmod +x autogen.sh
+chmod +x autobuild
 
-./autogen.sh build
+./autobuild build
 
-sudo ./autogen.sh install
+sudo ./autobuild install
 
 This will compile and install in the build folder
 
