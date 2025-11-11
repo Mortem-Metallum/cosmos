@@ -20,8 +20,8 @@ while [[ $# -gt 0 ]]; do
         ;;
         install)
             if [[ "$USER" != "root" ]]; then
-                echo "autogen.sh: Need root access, enter the root password to allow this"
-                su
+                echo "Must be root"
+                exit 1
             fi
             cp ./build/comet /usr/bin || cp ./comet /usr/bin
             cp ./build/cosmos /usr/bin || cp ./cosmos /usr/bin
