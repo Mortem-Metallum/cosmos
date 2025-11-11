@@ -13,8 +13,12 @@ sudo ./autogen.sh install
 This will compile and install in the build folder
 
 
+
+
+
 Usage: cosmos [ OPERAND ] [ PACKAGE ]
 
 Operands:
 
 install: Install the specified package
+--help: Display this help and exit
