@@ -2,14 +2,14 @@
 while [[ $# -gt 0 ]]; do
     case "$1" in
         clean)
-            read -p "autogen.sh: clean: Are you sure? [y/N]: " i
+            read -p "autobuild: clean: Are you sure? [y/N]: " i
             if [[ "$i" == "Y" || "$i" == "y" ]]; then
                 cd build 2>/dev/null
                 rm -rf *
             elif [[ "$i" == "N" || "$i" == "n" || "$i" == "" ]]; then
                 exit 0
             else
-                echo "autogen.sh: Please enter Y or N"
+                echo "autobuild: Please enter Y or N"
                 exit 1
             fi
         ;;
@@ -27,7 +27,7 @@ while [[ $# -gt 0 ]]; do
             cp ./build/cosmos /usr/bin || cp ./cosmos /usr/bin
         ;;
         *)
-            echo "autogen.sh: Please specify one arg: clean, install, or build"
+            echo "autobuild: Please specify one arg: clean, install, or build"
             exit 1
         ;;
     esac
