@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]){
-  i = 1;
+  int i = 1;
   while(i < argc){
     if(strcmp(argv[i], "-d") == 0){
       char builddir[100];
