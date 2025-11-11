@@ -68,8 +68,9 @@ int main(int argc, char *argv[]){
             printf("I >>> Done\n!");
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
-            printf("Operands: \n");
-            printf("install: Installs specified package\n");
+            printf("Operands: \n\n");
+            printf("install: Install the specified package\n");
+            printf("--help: Display this help and exit");
             return 0;
         } else {
             return 1;
