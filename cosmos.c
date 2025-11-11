@@ -60,8 +60,8 @@ int main(int argc, char *argv[]){
             }
             printf("I >>> Cleaning up...\n");
             printf(":: %s\n", mrproper);
-            int e2 = system(mrproper);
-            if(e2 != 0){
+            int e5 = system(mrproper);
+            if(e5 != 0){
                 printf("COMET: Failed!");
                 return 1;
             }
