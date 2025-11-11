@@ -18,8 +18,13 @@ while [[ $# -gt 0 ]]; do
             cmake -G Ninja ..
             ninja -C .
         ;;
+        install)
+            su
+            cp ./comet /usr/bin
+            cp ./cosmos /usr/bin
+        ;;
         *)
-            echo "autogen.sh: Please specify one arg: clean or build"
+            echo "autogen.sh: Please specify one arg: clean, install, or build"
             exit 1
         ;;
     esac
