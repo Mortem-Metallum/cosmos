@@ -21,6 +21,7 @@ int main(int argc, char *argv[]){
         printf("COMET: Failed!");
         return 1;
       }
+      printf("COMET: Finished compiling: %s\n", builddir);
       return 0;
     }
   }
