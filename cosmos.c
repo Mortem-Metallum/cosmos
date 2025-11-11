@@ -14,6 +14,7 @@ int main(int argc, char *argv[]){
             char cmd2[350];
             char cmd3[350];
             char cmd4[350];
+            char mrproper[350];
 
             strncpy(input, argv[2], sizeof(input) - 1);
             input[sizeof(input) - 1] = '\0';
@@ -22,6 +23,7 @@ int main(int argc, char *argv[]){
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "comet -d %s", input);
             snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s /usr/bin", input, input);
+            snprintf(mrproper, sizeof(mrproper), "rm -rf %s %s.tar.gz", input, input);
 
             printf("I >>>     Information, W >>>     Warning, ::     Command, E >>>     Error\n");
             printf(":: %s\n", cmd1);
@@ -58,8 +60,8 @@ int main(int argc, char *argv[]){
             }
             printf("I >>> Cleaning up...\n");
             printf(":: %s\n", mrproper);
-            int r2 = system(mrproper);
-            if(r2 != 0){
+            int e2 = system(mrproper);
+            if(e2 != 0){
                 printf("COMET: Failed!");
                 return 1;
             }
