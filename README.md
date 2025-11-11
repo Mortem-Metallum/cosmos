@@ -1,4 +1,8 @@
-This is Cosmos, a source-based UNIX Package Manager, written in C. To compile, run these commands:
+This is Cosmos, a source-based UNIX Package Manager, written in C. Now don't expect this to be a drop-in replacement to your OS's package manager, its not even nearly completed. It is also extremely simple (not yet do we have garbage collection, dependency handling, etc.)
+
+
+
+To compile, run these commands:
 
 git clone https://github.com/Mortem-Metallum/cosmos.git
 
