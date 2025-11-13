@@ -42,8 +42,11 @@ int main(int argc, char *argv[]) {
             }
         }
         fclose(ini);
+        char depinstall1[500];
+        snprintf(depinstall1, sizeof(depinstall1), "tar zxvf https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/%s", depends);
+        
     }
-
+    
     printf("COMET: BuildDir=%s\n", builddir);
     printf("COMET: Depends=%s\n", depends);
     printf("COMET: Version=%s\n", version);
