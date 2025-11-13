@@ -4,7 +4,7 @@ while [[ $# -gt 0 ]]; do
         clean)
             read -p "autobuild: clean: Are you sure? [y/N]: " i
             if [[ "$i" == "Y" || "$i" == "y" ]]; then
-                cd build 2>/dev/null
+                cd build
                 rm -rf *
             elif [[ "$i" == "N" || "$i" == "n" || "$i" == "" ]]; then
                 exit 0
