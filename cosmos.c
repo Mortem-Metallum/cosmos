@@ -7,6 +7,9 @@
 
 int main(int argc, char *argv[]){
     int i = 1;
+    if(argc < 2){
+        printf("E >>> Missing argument\nI >>> Try cosmos --help for more information");
+    }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
             char input[250];
