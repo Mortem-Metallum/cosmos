@@ -47,6 +47,8 @@ int main(int argc, char *argv[]) {
         } else {
             char depinstall1[512];
             char depinstall2[512];
+            char depr1[1024];
+            char depr2[1024];
         
             snprintf(depinstall1, sizeof(depinstall1), "tar zxvf https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s", depends);
             snprintf(depinstall2, sizeof(depinstall2), "cd %s && %s -C %s", depends, makeflags, builddir);
