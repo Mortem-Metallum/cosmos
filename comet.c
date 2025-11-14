@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
         printf("COMET: Failed!\n");
         return 1;
     }
-    printf("COMET: Finished compiling: %s\n", builddir);
+    printf("COMET: Finished compiling: %s and its dependencies (if any)\n", builddir);
 
     return 0;
 }
