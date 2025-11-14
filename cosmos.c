@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
-        printf("E >>> Missing argument\nI >>> Try cosmos --help for more information\n");
+        printf("E >>> Missing operands\nI >>> Try cosmos --help for more information\n");
     }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
             printf("Operands: \n\n");
             printf("install: Install the specified package\n");
-            printf("--help: Display this help and exit");
+            printf("--help: Display this help and exit\n");
             return 0;
         } else {
             return 1;
