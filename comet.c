@@ -47,19 +47,17 @@ int main(int argc, char *argv[]) {
         } else {
             char depinstall1[512];
             char depinstall2[512];
-            char depr1[1024];
-            char depr2[1024];
         
             snprintf(depinstall1, sizeof(depinstall1), "tar zxvf https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s", depends);
             snprintf(depinstall2, sizeof(depinstall2), "cd %s && %s -C %s", depends, makeflags, builddir);
 
-            depr1 = system(depinstall1);
+            int depr1 = system(depinstall1);
             if(depr1 != 0){
                 printf("COMET: Failed!\n");
                 return 1;
             }
 
-            depr2 = system(depinstall2);
+            int depr2 = system(depinstall2);
             if(depr2 != 0){
                 printf("COMET: Failed!\n");
                 return 1;
