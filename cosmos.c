@@ -42,6 +42,7 @@ int main(int argc, char *argv[]){
                 printf("%s\n\n", input);
                 printf("Is this OK? [ Y/N ]: ");
                 fgets(confirm, sizeof(confirm), stdin);
+                confirm[strcspn(confirm, "\n")] = '\0';
                 if(strcmp(confirm, "N") == 0 || strcmp(confirm, "n") == 0){
                     printf("I >>> Goodbye!\n");
                     return 0;
