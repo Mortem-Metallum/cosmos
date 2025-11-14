@@ -13,6 +13,7 @@ int main(int argc, char *argv[]){
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
             char input[250];
+            char confirm[10];
             char cmd1[1024];
             char cmd2[350];
             char cmd3[350];
@@ -36,6 +37,20 @@ int main(int argc, char *argv[]){
                 printf("E >>> Failed!\n");
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
+            } else {
+                printf("The following packages will be INSTALLED:\n");
+                printf("%s\n\n", input);
+                printf("Is this OK? [ Y/N ]: ");
+                fgets(confirm, sizeof(confirm), stdin);
+                if(strcmp(confirm, "N") == 0 || strcmp(confirm, "n") == 0){
+                    printf("I >>> Goodbye!\n");
+                    return 0;
+                } else if(strcmp(confirm, "Y") == 0 || strcmp(confirm, "y") == 0){
+                    ;
+                } else {
+                    printf("E >>> Invalid response.\n");
+                    return 1;
+                }
             }
 
             printf(":: %s\n", cmd2);
