@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
     FILE *ini = fopen(ini_path, "r");
     if(!ini){
-        printf("COMET: No buildconf.ini, using default make command\n");
+        printf("COMET: No buildconf.ini, using default config\n");
     }
 
     char line[MAX_LINE];
