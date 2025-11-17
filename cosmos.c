@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
-        printf("E >>> Missing operands\nI >>> Try cosmos --help for more information\n");
+        printf("E >>> Missing operand\nI >>> Try cosmos --help for more information\n");
     }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
