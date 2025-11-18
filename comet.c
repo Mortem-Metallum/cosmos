@@ -4,11 +4,11 @@
 
 #define MAX_LINE 256
 
-char line[MAX_LINE];
-char installto[MAX_LINE] = "/usr/bin";
-char depends[MAX_LINE] = "NONE";
-char makeflags[MAX_LINE] = "make -j$(nproc)";
-char version[MAX_LINE] = "UNKNOWN";
+//char line[MAX_LINE];
+//char installto[MAX_LINE] = "/usr/bin";
+//char depends[MAX_LINE] = "NONE";
+//char makeflags[MAX_LINE] = "make -j$(nproc)";
+//char version[MAX_LINE] = "UNKNOWN";
 
 int main(int argc, char *argv[]) {
     if(argc < 2){
