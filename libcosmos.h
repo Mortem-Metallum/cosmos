@@ -9,6 +9,6 @@ extern char makeflags[MAX_LINE];
 extern char version[MAX_LINE];
 extern char err_symbol[MAX_LINE];
 extern char warn_symbol[MAX_LINE];
-extern char info_symbol[MAX_LINE}
+extern char info_symbol[MAX_LINE];
 
 #endif
