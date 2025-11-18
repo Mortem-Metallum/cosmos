@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
             snprintf(cmd3, sizeof(cmd3), "comet -d %s", input);
-            snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s /usr/bin", input, input);
+            snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s %s", input, input, installto);
             snprintf(mrproper, sizeof(mrproper), "rm -rf %s %s.tar.gz", input, input);
 
             printf("I >>>     Information, W >>>     Warning, ::     Command, E >>>     Error\n");
