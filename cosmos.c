@@ -6,8 +6,6 @@
 #include <string.h>
 #include "cosmos.h"
 
-extern char installto;
-
 int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
