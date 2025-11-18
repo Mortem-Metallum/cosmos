@@ -1,5 +1,5 @@
 #ifndef COSMOS_H
 #define COSMOS_H
-extern char* installto;
+extern char installto;
 
 #endif
