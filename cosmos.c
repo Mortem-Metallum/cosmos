@@ -97,9 +97,7 @@ int main(int argc, char *argv[]){
             printf("Cosmos %s", cosmos_ver);
             return 0;
         } else {
-            printf("%s Invalid option\n", err_symbol);
-            printf("%s Try cosmos --help for more information\n", info_symbol);
-            return 1;
+            return 0;
         }
 
         i++;
