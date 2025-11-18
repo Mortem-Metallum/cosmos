@@ -93,7 +93,7 @@ int main(int argc, char *argv[]){
             printf("Operands: \n\n");
             printf("install: Install the specified package\n");
             printf("--help: Display this help and exit\n");
-            printf("--version: Display Cosmos version and exit");
+            printf("--version: Display Cosmos version and exit\n");
             return 0;
         } else if(strcmp(argv[i], "--version") == 0){
             printf("Cosmos %s\n", cosmos_ver);
