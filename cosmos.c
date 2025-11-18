@@ -12,7 +12,7 @@ char warn_symbol[512] = "\e[0;33mW \e[0m>>>";
 int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
-        printf("E >>> Missing operand\nI >>> Try cosmos --help for more information\n");
+        printf("%s Missing operand\nI >>> Try cosmos --help for more information\n", err_symbol);
     }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
 
             int e = system(cmd1);
             if(e != 0){
-                printf("E >>> Failed!\n");
+                printf("%s Failed!\n", err_symbol);
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             } else {
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
                 } else if(strcmp(confirm, "Y") == 0 || strcmp(confirm, "y") == 0){
                     ;
                 } else {
-                    printf("E >>> Invalid response.\n");
+                    printf("%s Invalid response\n", err_symbol);
                     return 1;
                 }
             }
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", cmd2);
             int e2 = system(cmd2);
             if(e2 != 0){
-                printf("E >>> Failed!\n");
+                printf("%s Failed!\n", err_symbol);
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             }
@@ -69,7 +69,7 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", cmd3);
             int e3 = system(cmd3);
             if(e3 != 0){
-                printf("E >>> Failed!\n");
+                printf("%s Failed!\n", err_symbol);
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             }
@@ -77,7 +77,7 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", cmd4);
             int e4 = system(cmd4);
             if(e4 != 0){
-                printf("E >>> Failed!\n");
+                printf("%s Failed!\n", err_symbol);
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             }
@@ -85,7 +85,7 @@ int main(int argc, char *argv[]){
             printf(":: %s\n", mrproper);
             int e5 = system(mrproper);
             if(e5 != 0){
-                printf("E >>> Failed!");
+                printf("%s Failed!\n", err_symbol);
                 return 1;
             }
             printf("I >>> Done!\n");
