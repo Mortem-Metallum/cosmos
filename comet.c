@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
         
     }
     
-    printf("COMET: Installing: %s>=%s", builddir, version);
+    printf("COMET: Installing: %s>=%s\n", builddir, version);
 
     char compilecmd[512];
     snprintf(compilecmd, sizeof(compilecmd), "%s -C %s", makeflags, builddir);
