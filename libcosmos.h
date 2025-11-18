@@ -10,5 +10,6 @@ extern char version[MAX_LINE];
 extern char err_symbol[MAX_LINE];
 extern char warn_symbol[MAX_LINE];
 extern char info_symbol[MAX_LINE];
+extern char cosmos_ver[MAX_LINE];
 
 #endif
