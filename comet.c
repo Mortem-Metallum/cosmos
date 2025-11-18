@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+#include "libcosmos.h"
 
 //char line[MAX_LINE];
 //char installto[MAX_LINE] = "/usr/bin";
