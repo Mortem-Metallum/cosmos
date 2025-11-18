@@ -91,9 +91,11 @@ int main(int argc, char *argv[]){
             printf("Operands: \n\n");
             printf("install: Install the specified package\n");
             printf("--help: Display this help and exit\n");
+            printf("--version: Display Cosmos version");
             return 0;
         } else if(strcmp(argv[i], "--version") == 0){
-            
+            printf("Cosmos %s", cosmos_ver);
+            return 0;
         } else {
             printf("%s Invalid option\n", err_symbol);
             printf("%s Try cosmos --help for more information\n", info_symbol);
