@@ -6,6 +6,8 @@
 #include <string.h>
 #include "libcosmos.h"
 
+char err_symbol[512] = "\e[0;31mE \e[0m>>>";
+char warn_symbol[512] = "\e[0;33mW \e[0m>>>";
 
 int main(int argc, char *argv[]){
     int i = 1;
