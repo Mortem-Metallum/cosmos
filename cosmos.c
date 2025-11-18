@@ -100,7 +100,7 @@ int main(int argc, char *argv[]){
             return 0;
         } else {
             printf("%s Invalid option\n", err_symbol);
-            printf("%s Try cosmos --help for more information", info_symbol);
+            printf("%s Try cosmos --help for more information\n", info_symbol);
             return 1;
         }
 
