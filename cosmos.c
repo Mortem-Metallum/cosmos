@@ -8,11 +8,12 @@
 
 char err_symbol[512] = "\e[0;31mE \e[0m>>>";
 char warn_symbol[512] = "\e[0;33mW \e[0m>>>";
+char info_symbol[512] = "\e[1;37mI \e[0m>>>"
 
 int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
-        printf("%s Missing operand\nI >>> Try cosmos --help for more information\n", err_symbol);
+        printf("%s Missing operand\n%s Try cosmos --help for more information\n", err_symbol, info_symbol);
     }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
@@ -33,7 +34,7 @@ int main(int argc, char *argv[]){
             snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s %s", input, input, installto);
             snprintf(mrproper, sizeof(mrproper), "rm -rf %s %s.tar.gz", input, input);
 
-            printf("I >>>     Information, W >>>     Warning, ::     Command, E >>>     Error\n");
+            printf("%s    Information, %s    Warning, ::    Command, %s    Error\n", info_symbol, warn_symbol, err_symbol);
             printf(":: %s\n", cmd1);
 
             int e = system(cmd1);
@@ -48,7 +49,7 @@ int main(int argc, char *argv[]){
                 fgets(confirm, sizeof(confirm), stdin);
                 confirm[strcspn(confirm, "\n")] = '\0';
                 if(strcmp(confirm, "N") == 0 || strcmp(confirm, "n") == 0){
-                    printf("I >>> Goodbye!\n");
+                    printf("%s Goodbye!\n", info_symbol);
                     return 0;
                 } else if(strcmp(confirm, "Y") == 0 || strcmp(confirm, "y") == 0){
                     ;
@@ -81,14 +82,14 @@ int main(int argc, char *argv[]){
                 printf("The operation could not complete due to previous errors\n");
                 return 1;
             }
-            printf("I >>> Cleaning up...\n");
+            printf("%s Cleaning up...\n", info_symbol);
             printf(":: %s\n", mrproper);
             int e5 = system(mrproper);
             if(e5 != 0){
                 printf("%s Failed!\n", err_symbol);
                 return 1;
             }
-            printf("I >>> Done!\n");
+            printf("%s Done!\n", info_symbol);
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
             printf("Operands: \n\n");
