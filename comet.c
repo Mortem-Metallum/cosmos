@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     if(ini){
         while(fgets(line, sizeof(line), ini)){
-            line[strcspn(line, "\r\n")] = 0;
+            line[strcspn(line, "\n")] = 0;
 
             if(line[0] == '#' || line[0] == ';' || line[0] == '\0') continue;
 
@@ -39,6 +39,8 @@ int main(int argc, char *argv[]) {
                 sscanf(line, "makeflags = %255[^\n]", makeflags);
             } else if(strncmp(line, "version", 7) == 0){
                 sscanf(line, "version = %255[^\n]", version);
+            } else if(strncmp(line, "installto", 7) == 0){
+                sscanf(line, "installto = %255[^\n]", installto);
             }
         }
         fclose(ini);
