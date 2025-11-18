@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_LINE 256
 
 //char line[MAX_LINE];
 //char installto[MAX_LINE] = "/usr/bin";
