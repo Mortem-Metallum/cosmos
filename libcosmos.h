@@ -1,5 +1,6 @@
 #ifndef LIBCOSMOS_H
 #define LIBCOSMOS_H
+#define MAX_LINE 256
 
 char line[MAX_LINE];
 char installto[MAX_LINE];
