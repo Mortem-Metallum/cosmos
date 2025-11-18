@@ -4,10 +4,11 @@ project(CosmosPM C)
 
 add_library(libcosmos SHARED libcosmos.c)
 
-add_compile_options("-L. -llibcosmos.so")
+
 add_executable(cosmos cosmos.c)
 add_executable(comet comet.c)
-## target_link_libraries(cosmos PRIVATE libcosmos)
-## target_link_libraries(comet PRIVATE libcosmos)
+target_link_libraries(cosmos PRIVATE libcosmos)
+target_link_libraries(comet PRIVATE libcosmos)
+
 
 
