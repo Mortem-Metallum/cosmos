@@ -26,3 +26,4 @@ Operands:
 
 install: Install the specified package
 --help: Display this help and exit
+--version: Display Cosmos version and exit

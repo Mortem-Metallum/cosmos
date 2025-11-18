@@ -87,18 +87,21 @@ int main(int argc, char *argv[]){
                 return 1;
             }
             printf("%s Done!\n", info_symbol);
+            return 0;
         } else if(strcmp(argv[i], "--help") == 0){
             printf("Usage: cosmos [ OPERAND ] [ PACKAGE ]\n");
             printf("Operands: \n\n");
             printf("install: Install the specified package\n");
             printf("--help: Display this help and exit\n");
-            printf("--version: Display Cosmos version");
+            printf("--version: Display Cosmos version and exit");
             return 0;
         } else if(strcmp(argv[i], "--version") == 0){
             printf("Cosmos %s\n", cosmos_ver);
             return 0;
         } else {
-            return 0;
+            printf("%s Invalid option\n", err_symbol);
+            printf("%s Try cosmos --help for more information", info_symbol);
+            return 1;
         }
 
         i++;
