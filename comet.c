@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
             char depinstall1[512];
             char depinstall2[512];
         
-            snprintf(depinstall1, sizeof(depinstall1), "tar zxvf https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s", depends);
+            snprintf(depinstall1, sizeof(depinstall1), "git clone https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.git", depends);
             snprintf(depinstall2, sizeof(depinstall2), "cd %s && %s -C %s", depends, makeflags, builddir);
 
             int depr1 = system(depinstall1);
