@@ -6,7 +6,7 @@
 #include <string.h>
 #include "cosmos.h"
 
-extern char* installto;
+extern char installto;
 
 int main(int argc, char *argv[]){
     int i = 1;
