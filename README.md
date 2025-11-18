@@ -1,4 +1,4 @@
-This is Cosmos, a source-based UNIX Package Manager, written in C. Now don't expect this to be a drop-in replacement to your OS's package manager, its not even nearly completed. It is also extremely simple (not yet do we have garbage collection, dependency handling, etc.)
+This is Cosmos, a source-based UNIX Package Manager, written in C. Now don't expect this to be a drop-in replacement to your OS's package manager, its not even nearly completed. It is also extremely simple (not yet do we have garbage collection, proper dependency handling, etc.). Dependency handling is..... existent, but not great.
 
 
 
