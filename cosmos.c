@@ -10,6 +10,7 @@ int main(int argc, char *argv[]){
     int i = 1;
     if(argc < 2){
         printf("%s Missing operand\n%s Try cosmos --help for more information\n", err_symbol, info_symbol);
+        return 1;
     }
     while(i < argc){
         if(strcmp(argv[i], "install") == 0){
