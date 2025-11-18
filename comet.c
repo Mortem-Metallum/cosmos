@@ -3,11 +3,6 @@
 #include <stdlib.h>
 #include "libcosmos.h"
 
-//char line[MAX_LINE];
-//char installto[MAX_LINE] = "/usr/bin";
-//char depends[MAX_LINE] = "NONE";
-//char makeflags[MAX_LINE] = "make -j$(nproc)";
-//char version[MAX_LINE] = "UNKNOWN";
 
 int main(int argc, char *argv[]) {
     if(argc < 2){
