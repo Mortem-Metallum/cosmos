@@ -12,4 +12,6 @@ extern char warn_symbol[MAX_LINE];
 extern char info_symbol[MAX_LINE];
 extern char cosmos_ver[MAX_LINE];
 
+void trim(char *str);
+
 #endif

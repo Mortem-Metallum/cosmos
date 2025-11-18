@@ -32,12 +32,16 @@ int main(int argc, char *argv[]) {
 
             if(strncmp(line, "depends", 7) == 0){
                 sscanf(line, "depends = %255[^\n]", depends);
+                trim(depends);
             } else if(strncmp(line, "makeflags", 9) == 0){
                 sscanf(line, "makeflags = %255[^\n]", makeflags);
+                trim(makeflags);
             } else if(strncmp(line, "version", 7) == 0){
                 sscanf(line, "version = %255[^\n]", version);
+                trim(version);
             } else if(strncmp(line, "installto", 7) == 0){
                 sscanf(line, "installto = %255[^\n]", installto);
+                trim(installto);
             }
         }
         fclose(ini);
