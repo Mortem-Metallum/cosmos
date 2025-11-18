@@ -95,7 +95,7 @@ int main(int argc, char *argv[]){
             printf("--version: Display Cosmos version");
             return 0;
         } else if(strcmp(argv[i], "--version") == 0){
-            printf("Cosmos %s", cosmos_ver);
+            printf("Cosmos %s\n", cosmos_ver);
             return 0;
         } else {
             return 0;
