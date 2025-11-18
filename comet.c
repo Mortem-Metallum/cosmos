@@ -4,6 +4,12 @@
 
 #define MAX_LINE 256
 
+char line[MAX_LINE];
+char installto[MAX_LINE] = "/usr/bin";
+char depends[MAX_LINE] = "NONE";
+char makeflags[MAX_LINE] = "make -j$(nproc)";
+char version[MAX_LINE] = "UNKNOWN";
+
 int main(int argc, char *argv[]) {
     if(argc < 2){
         printf("Usage: comet -d <builddir>\n");
@@ -22,10 +28,7 @@ int main(int argc, char *argv[]) {
         printf("COMET: No buildconf.ini, using default config\n");
     }
 
-    char line[MAX_LINE];
-    char depends[MAX_LINE] = "NONE";
-    char makeflags[MAX_LINE] = "make -j$(nproc)";
-    char version[MAX_LINE] = "UNKNOWN";
+
 
     if(ini){
         while(fgets(line, sizeof(line), ini)){
@@ -68,10 +71,7 @@ int main(int argc, char *argv[]) {
         
     }
     
-    printf("COMET: BuildDir=%s\n", builddir);
-    printf("COMET: Depends=%s\n", depends);
-    printf("COMET: Version=%s\n", version);
-    printf("COMET: MakeFlags=%s\n", makeflags);
+    print("COMET: Installing: %s>=%s", builddir, version);
 
     char compilecmd[512];
     snprintf(compilecmd, sizeof(compilecmd), "%s -C %s", makeflags, builddir);
