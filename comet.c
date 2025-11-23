@@ -39,9 +39,9 @@ int main(int argc, char *argv[]) {
             } else if(strncmp(line, "version", 7) == 0){
                 sscanf(line, "version = %255[^\n]", version);
                 trim(version);
-            } else if(strncmp(line, "installto", 7) == 0){
-                sscanf(line, "installto = %255[^\n]", installto);
-                trim(installto);
+            } else if(strncmp(line, "installmainexec", 15) == 0){
+                sscanf(line, "installmainexec = %255[^\n]", installto);
+                trim(installmainexec);
             }
         }
         fclose(ini);
@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
         
     }
     
-    printf("COMET: Installing: %s>=%s\n", builddir, version);
+    printf("COMET: Cosmos explicit: %s>=%s\n", builddir, version);
 
     char compilecmd[512];
     snprintf(compilecmd, sizeof(compilecmd), "%s -C %s", makeflags, builddir);
