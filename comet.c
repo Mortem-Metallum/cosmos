@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
                 sscanf(line, "version = %255[^\n]", version);
                 trim(version);
             } else if(strncmp(line, "installmainexec", 15) == 0){
-                sscanf(line, "installmainexec = %255[^\n]", installto);
+                sscanf(line, "installmainexec = %255[^\n]", installmainexec);
                 trim(installmainexec);
             }
         }
