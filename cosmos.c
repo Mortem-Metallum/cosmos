@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
         if(strcmp(argv[i], "install") == 0){
             char input[250];
             char confirm[10];
-            char post[50]
+            char post[50];
             char cmd1[1024];
             char cmd2[350];
             char cmd3[350];
