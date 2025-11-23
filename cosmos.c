@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
         if(strcmp(argv[i], "install") == 0){
             char input[250];
             char confirm[10];
+            char post[50]
             char cmd1[1024];
             char cmd2[350];
             char cmd3[350];
@@ -28,8 +29,9 @@ int main(int argc, char *argv[]){
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
             snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz >/dev/null", input);
             snprintf(cmd3, sizeof(cmd3), "comet -d %s", input);
-            snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s %s", input, input, installto);
+            snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s %s", input, input, installmainexec);
             snprintf(mrproper, sizeof(mrproper), "rm -rf %s %s.tar.gz", input, input);
+            snprintf(post, sizeof(post), "sh %s/POST.sh", input);
 
             printf("%s    Information, %s    Warning, ::    Command, %s    Error\n", info_symbol, warn_symbol, err_symbol);
             printf(":: %s\n", cmd1);
