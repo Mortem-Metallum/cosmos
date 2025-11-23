@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
             input[sizeof(input) - 1] = '\0';
 
             snprintf(cmd1, sizeof(cmd1), "wget https://raw.githubusercontent.com/Mortem-Metallum/cosmos-repo/main/%s.tar.gz", input);
-            snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz", input);
+            snprintf(cmd2, sizeof(cmd2), "tar xvf %s.tar.gz >/dev/null", input);
             snprintf(cmd3, sizeof(cmd3), "comet -d %s", input);
             snprintf(cmd4, sizeof(cmd4), "cp ./%s/%s %s", input, input, installto);
             snprintf(mrproper, sizeof(mrproper), "rm -rf %s %s.tar.gz", input, input);
@@ -42,10 +42,10 @@ int main(int argc, char *argv[]){
             } else {
                 printf("The following packages will be INSTALLED:\n");
                 printf("%s\n\n", input);
-                printf("Is this OK? [ Y/N ]: ");
+                printf("Is this OK? [y/N]: ");
                 fgets(confirm, sizeof(confirm), stdin);
                 confirm[strcspn(confirm, "\n")] = '\0';
-                if(strcmp(confirm, "N") == 0 || strcmp(confirm, "n") == 0){
+                if(strcmp(confirm, "N") == 0 || strcmp(confirm, "n") == 0 || strcmp(confirm, "") == 0){
                     printf("%s Goodbye!\n", info_symbol);
                     return 0;
                 } else if(strcmp(confirm, "Y") == 0 || strcmp(confirm, "y") == 0){
