@@ -74,6 +74,11 @@ int main(int argc, char *argv[]){
                 return 1;
             }
 
+            int rp = system(post);
+            if(rp != 0){
+                printf("%s POST.sh not found -- not executing"), warn_symbol);
+            }
+
             printf(":: %s\n", cmd4);
             int e4 = system(cmd4);
             if(e4 != 0){
